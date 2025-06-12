@@ -1,7 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { storage, db } from './firebase';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { collection, addDoc, getDocs, deleteDoc, doc, query, orderBy } from 'firebase/firestore';
+import React, { useState } from 'react';
 
 const MENU = [
   { key: 'album', label: 'Album Foto', icon: '🖼️' },
