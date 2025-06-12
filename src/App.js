@@ -116,7 +116,6 @@ function SuratCinta() {
   useEffect(() => {
     localStorage.setItem('suratCinta', JSON.stringify(letters));
   }, [letters]);
-  const now = new Date();
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
   const handleSubmit = e => {
     e.preventDefault();
@@ -126,11 +125,12 @@ function SuratCinta() {
   };
   // Auto-move to sent if date has passed
   useEffect(() => {
+    const now = new Date();
     setLetters(ls => ls.map(l => {
       if (!l.sent && new Date(l.date) <= now) return { ...l, sent: true };
       return l;
     }));
-  }, [now]);
+  }, []);
   const handleDelete = idx => setLetters(letters.filter((_, i) => i !== idx));
   const handleEdit = idx => {
     setForm({ date: letters[idx].date, message: letters[idx].message });
