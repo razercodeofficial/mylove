@@ -14,16 +14,10 @@ function MusicPlayer() {
   return (
     <div className="w-full flex flex-col items-center bg-pink-50 border-b border-pink-200 px-4 py-2">
       <div className="font-semibold text-pink-600 text-sm sm:text-base mb-1">Arash Buana - Something About U</div>
-      <iframe
-        width="100%"
-        height="80"
-        scrolling="no"
-        frameBorder="no"
-        allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/arashbuana-music/something-about-you&color=%23ffb6c1&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-        title="Arash Buana - Something About U"
-        style={{ borderRadius: '8px', maxWidth: 400 }}
-      ></iframe>
+      <audio controls autoPlay loop className="w-full max-w-xs" style={{ borderRadius: '8px' }}>
+        <source src="/somethingaboutyou.mp3" type="audio/mpeg" />
+        Browser kamu tidak mendukung pemutar audio.
+      </audio>
     </div>
   );
 }
